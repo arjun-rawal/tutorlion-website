@@ -1,33 +1,44 @@
 import Link from "next/link";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${menuOpen ? "open" : ""}`}>
       <div className="navbar-container">
         <div className="navbar-brand">TutorLion</div>
-        <ul className="navbar-links">
+        <div className={`menu-toggle ${menuOpen ? "open" : ""}`} onClick={toggleMenu}>
+          <div className="menu-text">Menu</div>
+          <div className="menu-icon">&#9776;</div>
+        </div>
+        <ul className={`navbar-links ${menuOpen ? "open" : ""}`}>
           <li className="navbar-link">
-            <Link style ={{'text-decoration':'none'}} href="/home">
+            <Link href="/home">
               <p>Home</p>
             </Link>
           </li>
           <li className="navbar-link">
-            <Link style ={{'text-decoration':'none'}}href="/about">
+            <Link href="/about">
               <p>About Us</p>
             </Link>
           </li>
           <li className="navbar-link">
-            <Link style ={{'text-decoration':'none'}} href="/tutors">
+            <Link href="/tutors">
               <p>Our Tutors</p>
             </Link>
           </li>
           <li className="navbar-link">
-            <Link style ={{'text-decoration':'none'}} href="/contact">
+            <Link href="/contact">
               <p>Contact</p>
             </Link>
           </li>
           <li className="navbar-link">
-            <Link style ={{'text-decoration':'none'}} href="/resources">
+            <Link href="/resources">
               <p>Resources</p>
             </Link>
           </li>
@@ -36,7 +47,7 @@ const Navbar = () => {
 
       <style jsx>{`
         .navbar {
-          background-color: #BA797D;
+          background-color: #ba797d;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
           position: absolute;
           top: 0;
@@ -49,7 +60,7 @@ const Navbar = () => {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 10px 20px; 
+          padding: 10px 20px;
         }
 
         .navbar-brand {
@@ -58,10 +69,36 @@ const Navbar = () => {
           color: white;
         }
 
+        .menu-toggle {
+          display: none;
+        }
+
+        .menu-toggle.open {
+          display: flex;
+          align-items: center;
+          margin-right: 20px;
+          cursor: pointer;
+          padding: 8px 12px;
+          background-color: rgba(0, 0, 0, 0.2);
+          border-radius: 10px;
+        }
+
+        .menu-text {
+          color: white;
+          font-size: 16px;
+          margin-right: 5px;
+        }
+
+        .menu-icon {
+          font-size: 20px;
+          color: white;
+        }
+
         .navbar-links {
           display: flex;
           list-style-type: none;
           text-decoration: none;
+          transition: 0.3s;
         }
 
         .navbar-link {
@@ -74,7 +111,7 @@ const Navbar = () => {
         .navbar-link p {
           color: #002244;
           text-decoration: none;
-          padding: 8px 12px; 
+          padding: 8px 12px;
           margin: 0;
           font-weight: bold;
           font-family: "Arial", sans-serif;
@@ -97,6 +134,62 @@ const Navbar = () => {
 
         .navbar-link:hover::after {
           opacity: 1;
+        }
+
+        .navbar.open {
+          height: auto;
+        }
+
+        .navbar.open .navbar-links {
+          max-height: 300px;
+        }
+
+        .navbar-links.open {
+          display: flex;
+          flex-direction: column;
+        }
+
+        @media screen and (max-width: 600px) {
+          .navbar-container {
+            flex-wrap: wrap;
+            justify-content: flex-end;
+          }
+
+          .navbar-brand {
+            order: 2;
+            margin-bottom: 10px;
+          }
+
+          .menu-toggle {
+            order: 3;
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            cursor: pointer;
+            padding: 8px 12px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+          }
+
+          .navbar-links {
+            order: 1;
+            width: 100%;
+            max-height: 0;
+            overflow: hidden;
+            flex-direction: column;
+            margin-top: 10px;
+            background-color: #ba797d;
+            border-radius: 10px;
+          }
+
+          .navbar-links.open {
+            max-height: 300px;
+            padding: 10px;
+          }
+
+          .navbar-link {
+            margin: 10px 0;
+          }
         }
       `}</style>
     </nav>
