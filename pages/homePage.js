@@ -19,8 +19,8 @@ const HomePage = () => {
         <>
           <div className="animated-text">
             <h1>
-              <span className="animated-word tutor">Tutor</span>
-              <span className="animated-word lion">Lion</span>
+              <span className="animated-word tutor">Lion</span>
+              <span className="animated-word lion">Tutor</span>
             </h1>
           </div>
           <div className="scroll-indicator">⌄</div>
@@ -83,7 +83,7 @@ const HomePage = () => {
           }
           100% {
             opacity: 1;
-            left: 41%;
+            left: 50%;
           }
         }
 
@@ -94,7 +94,7 @@ const HomePage = () => {
           }
           100% {
             opacity: 1;
-            right: 41%;
+            right: 50%;
           }
         }
 
