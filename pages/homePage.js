@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -47,76 +47,75 @@ const HomePage = () => {
           animation: spin 1s linear infinite;
         }
         .animated-text {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;      
-            transform: translateY(-50%);
-          }
-          
-          .animated-word {
-            font-size: 72px;
-            font-family: 'Arial', sans-serif;
-            color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          right: 0;
+          transform: translateY(-50%);
+        }
+
+        .animated-word {
+          font-size: 72px;
+          font-family: "Arial", sans-serif;
+          color: white;
+          opacity: 0;
+          position: absolute;
+        }
+
+        .tutor {
+          color: #000000;
+          left: 0;
+          animation: slideInLeft 1s forwards;
+        }
+
+        .lion {
+          right: 0;
+          animation: slideInRight 1s forwards;
+        }
+
+        @keyframes slideInLeft {
+          0% {
             opacity: 0;
-            position: absolute;
+            transform: translateX(-100%);
           }
-          
-          .tutor {
-            color: #000000;
-            left: 0;
-            animation: slideInLeft 1s forwards;
+          100% {
+            opacity: 1;
+            left: 41%;
           }
-          
-          .lion {
-            right: 0;
-            animation: slideInRight 1s forwards;
+        }
+
+        @keyframes slideInRight {
+          0% {
+            opacity: 0;
+            transform: translateX(100%);
           }
-          
-          @keyframes slideInLeft {
-            0% {
-              opacity: 0;
-              transform: translateX(-100%);
-            }
-            100% {
-              opacity: 1;
-              left: 41%;
-            }
+          100% {
+            opacity: 1;
+            right: 41%;
           }
-          
-          @keyframes slideInRight {
-            0% {
-              opacity: 0;
-              transform: translateX(100%);
-            }
-            100% {
-              opacity: 1;
-              right: 41%;  
-            }
-          }
-          
-          
+        }
+
         .scroll-indicator {
-            position: absolute;
-            font-size: 80px;
-            bottom: 100px;
-            width: 30px;
-            height: 30px;
-            color: white;
-            transform: translateY(50%);
-            animation: bounce 1s infinite alternate;
-          }
+          position: absolute;
+          font-size: 80px;
+          bottom: 100px;
+          width: 30px;
+          height: 30px;
+          color: white;
+          transform: translateY(50%);
+          animation: bounce 1s infinite alternate;
+        }
         @keyframes spin {
-            0% {
-              transform: rotate(0deg);
-            }
-            100% {
-              transform: rotate(360deg);
-            }
+          0% {
+            transform: rotate(0deg);
           }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
 
         @keyframes bounce {
           0% {
