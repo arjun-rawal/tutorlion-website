@@ -7,27 +7,27 @@ const Navbar = () => {
         <div className="navbar-brand">TutorLion</div>
         <ul className="navbar-links">
           <li className="navbar-link">
-            <Link href="/home">
+            <Link style ={{'text-decoration':'none'}} href="/home">
               <p>Home</p>
             </Link>
           </li>
           <li className="navbar-link">
-            <Link href="/about">
+            <Link style ={{'text-decoration':'none'}}href="/about">
               <p>About Us</p>
             </Link>
           </li>
           <li className="navbar-link">
-            <Link href="/tutors">
+            <Link style ={{'text-decoration':'none'}} href="/tutors">
               <p>Our Tutors</p>
             </Link>
           </li>
           <li className="navbar-link">
-            <Link href="/contact">
+            <Link style ={{'text-decoration':'none'}} href="/contact">
               <p>Contact</p>
             </Link>
           </li>
           <li className="navbar-link">
-            <Link href="/resources">
+            <Link style ={{'text-decoration':'none'}} href="/resources">
               <p>Resources</p>
             </Link>
           </li>
@@ -77,6 +77,8 @@ const Navbar = () => {
           padding: 8px 12px; 
           margin: 0;
           font-weight: bold;
+          font-family: "Arial", sans-serif;
+          font-size: 16px;
         }
 
         .navbar-link::after {
