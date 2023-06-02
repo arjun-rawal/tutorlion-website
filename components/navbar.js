@@ -60,7 +60,7 @@ const Navbar = () => {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 10px 20px;
+          padding: 20px 20px;
         }
 
         .navbar-brand {
@@ -149,19 +149,20 @@ const Navbar = () => {
           flex-direction: column;
         }
 
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 800px) {
           .navbar-container {
             flex-wrap: wrap;
             justify-content: flex-end;
           }
 
           .navbar-brand {
-            order: 2;
-            margin-bottom: 10px;
+            position: absolute;
+            left:1%;
+            top: 44px;
           }
 
           .menu-toggle {
-            order: 3;
+            margin-top: 17px;
             display: flex;
             align-items: center;
             margin-right: 20px;
