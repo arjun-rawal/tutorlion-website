@@ -39,8 +39,8 @@ const HomePage = () => {
         }
 
         .loading-indicator {
-          width: 100px;
-          height: 100px;
+          width: 10vw;
+          height: 10vw;
           border: 5px solid white;
           border-top-color: transparent;
           border-radius: 50%;
@@ -100,10 +100,10 @@ const HomePage = () => {
 
         .scroll-indicator {
           position: absolute;
-          font-size: 80px;
-          bottom: 100px;
-          width: 30px;
-          height: 30px;
+          font-size: 8vw;
+          bottom: 20%;
+          width: 5vw;
+          height: 5vw;
           color: white;
           transform: translateY(50%);
           animation: bounce 1s infinite alternate;
