@@ -1,5 +1,7 @@
 import Head from "next/head";
 import HomePage from "./homePage";
+import Testimonials from "@/components/testimonials";
+import Navbar from "@/components/navbar";
 
 const Home = () => {
   return (
@@ -12,7 +14,7 @@ const Home = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+    
       <HomePage />
 
       {/* <footer>

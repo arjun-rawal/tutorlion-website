@@ -1,3 +1,4 @@
+import Navbar from "@/components/navbar";
 import { useState, useEffect } from "react";
 
 const HomePage = () => {
@@ -6,12 +7,14 @@ const HomePage = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
+    <>
+    <Navbar />
     <div className="home">
       {isLoading ? (
         <div className="loading-indicator"></div>
@@ -22,6 +25,7 @@ const HomePage = () => {
               <span className="animated-word tutor">Lion</span>
               <span className="animated-word lion">Tutor</span>
             </h1>
+            <span className="catchphrase">For Students, By Students</span>
           </div>
           <div className="scroll-indicator">⌄</div>
         </>
@@ -29,7 +33,7 @@ const HomePage = () => {
 
       <style jsx>{`
         .home {
-          background-color: #f57905;
+          background-color:#ECECEC;
           height: 100vh;
           display: flex;
           justify-content: center;
@@ -37,7 +41,16 @@ const HomePage = () => {
           position: relative;
           overflow: hidden;
         }
+        .catchphrase{
+          font-size: 24px;
+          font-family: "Arial", sans-serif;
+          color: #ba797d;
+          opacity: 1;
+          margin-top: 10px;
+          animation: fadeIn 1s forwards;
+          margin-top: 60px;
 
+        }
         .loading-indicator {
           width: 10vw;
           height: 10vw;
@@ -48,13 +61,14 @@ const HomePage = () => {
         }
         .animated-text {
           display: flex;
-          justify-content: center;
+          flex-direction: column;
           align-items: center;
+          justify-content: center;
           position: absolute;
           top: 50%;
-          left: 0;
-          right: 0;
-          transform: translateY(-50%);
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
         }
 
         .animated-word {
@@ -66,13 +80,14 @@ const HomePage = () => {
         }
 
         .tutor {
-          color: #000000;
+          color: #002244;
           left: 0;
           animation: slideInLeft 1s forwards;
         }
 
         .lion {
           right: 0;
+          color: #BA797D;
           animation: slideInRight 1s forwards;
         }
 
@@ -104,7 +119,7 @@ const HomePage = () => {
           bottom: 20%;
           width: 5vw;
           height: 5vw;
-          color: white;
+          color: #D9B99B;
           transform: translateY(50%);
           animation: bounce 1s infinite alternate;
         }
@@ -130,6 +145,7 @@ const HomePage = () => {
         }
       `}</style>
     </div>
+    </>
   );
 };
 
