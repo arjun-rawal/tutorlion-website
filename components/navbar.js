@@ -12,33 +12,36 @@ const Navbar = () => {
     <nav className={`navbar ${menuOpen ? "open" : ""}`}>
       <div className="navbar-container">
         <div className="navbar-brand">TutorLion</div>
-        <div className={`menu-toggle ${menuOpen ? "open" : ""}`} onClick={toggleMenu}>
+        <div
+          className={`menu-toggle ${menuOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+        >
           <div className="menu-text">Menu</div>
           <div className="menu-icon">&#9776;</div>
         </div>
         <ul className={`navbar-links ${menuOpen ? "open" : ""}`}>
           <li className="navbar-link">
-            <Link href="/home">
+            <Link style={{'text-decoration':'none'}}href="/home">
               <p>Home</p>
             </Link>
           </li>
           <li className="navbar-link">
-            <Link href="/about">
+            <Link style={{'text-decoration':'none'}}href="/about">
               <p>About Us</p>
             </Link>
           </li>
           <li className="navbar-link">
-            <Link href="/tutors">
+            <Link style={{'text-decoration':'none'}}href="/tutors">
               <p>Our Tutors</p>
             </Link>
           </li>
           <li className="navbar-link">
-            <Link href="/contact">
+            <Link style={{'text-decoration':'none'}}href="/contact">
               <p>Contact</p>
             </Link>
           </li>
           <li className="navbar-link">
-            <Link href="/resources">
+            <Link style={{'text-decoration':'none'}}href="/resources">
               <p>Resources</p>
             </Link>
           </li>
@@ -47,7 +50,7 @@ const Navbar = () => {
 
       <style jsx>{`
         .navbar {
-          background-color: #ba797d;
+          background-color: #e67220;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
           position: absolute;
           top: 0;
@@ -109,7 +112,7 @@ const Navbar = () => {
         }
 
         .navbar-link p {
-          color: #002244;
+          color: 01468a;
           text-decoration: none;
           padding: 8px 12px;
           margin: 0;
@@ -157,7 +160,7 @@ const Navbar = () => {
 
           .navbar-brand {
             position: absolute;
-            left:1%;
+            left: 1%;
             top: 44px;
           }
 
@@ -179,7 +182,7 @@ const Navbar = () => {
             overflow: hidden;
             flex-direction: column;
             margin-top: 10px;
-            background-color: #ba797d;
+            background-color: a797#bd;
             border-radius: 10px;
           }
 
