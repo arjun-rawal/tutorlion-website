@@ -8,7 +8,7 @@ const Home = () => {
         <title>Tutor Lion | Home</title>
         <meta
           name="description"
-          content="Welcome to Tutor Lion - your local tutoring solution!"
+          content="For Students, By Students"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

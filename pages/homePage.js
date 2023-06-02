@@ -58,7 +58,7 @@ const HomePage = () => {
         }
 
         .animated-word {
-          font-size: 72px;
+          font-size: 75px;
           font-family: "Arial", sans-serif;
           color: white;
           opacity: 0;
